@@ -1,8 +1,6 @@
 import sys
 import os
-import _io
 import pickle
-
 
 
 class Storage:

@@ -10,10 +10,11 @@ import numpy
 import scipy
 
 
-from data.misc import progressbar
-from data.parser import readTable
-from data.picklemodel import pickelFormat,Storage
-from data.plot import ( draw_dictionnary, Plot )
-from data.series import ( series, structure )
-from data.timer import Timer
+from misc.misc import progressbar
+from misc.table import readTable
+from misc.storage import Storage
+from misc.plot import ( draw_dictionnary, Plot )
+from misc.series import ( series, )
+from misc.structure import ( structure, )
+from misc.timer import Timer
 
