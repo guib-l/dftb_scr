@@ -1,7 +1,18 @@
 # DFTB SCR
 ## DFTB Self-Charge-Rotation
 
-_Programme qui fonction mais le principe est beaucoup trop couteux._
+_Programme qui fonction (théoriquement) mais le principe est beaucoup trop couteux en temps de calcul et en ressource mémoire._
+
 _Le code a été refait : il est un extrait des codes qui ont été réalisé au cours de thèse._
-_Un certain nombre de bug peuvent subsister (le retravail de ce code n'est as finit)._
+_Un certain nombre de bugs peuvent subsister (le retravail de ce code n'est pas encore finit)._
+
+### pyDFTB
+
+Ce bout de code est destiné à pouvoir réaliser des calculs de DFTB (_Density Functional based Tight-Binding_).
+
+### Rotation des orbitales
+
+
+
+
 
