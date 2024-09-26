@@ -5,7 +5,7 @@ import pickle
 
 
 
-class pickelFormat:
+class Storage:
     def __init__( self, 
                   filename:str, 
                   txt:_io.TextIOWrapper=sys.stdout)->None:
@@ -40,6 +40,7 @@ class pickelFormat:
         return self._model
         
 
+"""
 
 class Storage(pickelFormat):
 
@@ -67,5 +68,5 @@ class Storage(pickelFormat):
         super().__init__( directory + fileName  )
 
 
-
+"""
 

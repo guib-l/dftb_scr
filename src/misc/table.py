@@ -9,8 +9,13 @@ class readTable :
                   comment:str = "",
                   verbose:bool = False,
                   replace:float=None,):
-        
+        """
+        Class readTable ::
 
+        Object utile à la lecteur de n'importe quel fichier texte disposé 
+        colonnes.
+
+        """
         self.file_name  = file_name
         self.comment    = comment
         self._verbose   = verbose
@@ -46,20 +51,20 @@ class readTable :
         self.data = lst
         
     def print(self):
-    	if self.verbose == True:
-    	    print("debug :: Les donnée sont issues du fichier {}"
+        if self.verbose == True:
+            print("debug :: Les donnée sont issues du fichier {}"
                   .format(self.file_name))
-    	    print("debug :: Commentaire :: {}"
+            print("debug :: Commentaire :: {}"
                   .format(self.comment))
-    	else:
+        else:
             print("Need to allow verbose variable")
             
     def extract(self, column_1):
-    	return np.array(self.data[:, column_1])
+        return np.array(self.data[:, column_1])
 
     def __call__(self, replace=None):
-    	self.__collect(replace=replace)
-    	if self._verbose == True:
+        self.__collect(replace=replace)
+        if self._verbose == True:
             self.print()
 
     def write( self, 

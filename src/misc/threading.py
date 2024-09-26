@@ -18,6 +18,9 @@ STEP_verbose_low      = 1
 STEP_verbose_not      = 0
 
 
+# Pas sûr de ce morceau de code
+
+
 class IsolatedThread (threading.Thread):
 
     def __init__(
@@ -195,15 +198,6 @@ if __name__ == '__main__':
     fct2 = lambda x: x**3
     fct = lambda x: x**2
     nameList = [fct, fct, fct2,fct2,fct3, fct, fct, fct2,fct2,fct3]
-
-    # Génère une queue infinie
-    #workQueue = queue.Queue(0)
-    # Défini un veroux sur chaque thread de sorte qu'ils soient synchrones.
-    #queueLock = threading.Lock()
-    # Génère une queue infinie
-    #workQueue = queue.Queue(0)
-    # Défini un veroux sur chaque thread de sorte qu'ils soient synchrones.
-    #queueLock = threading.Lock()
 
     #exitFlag = 0
     M = MultiThread(2, nameList)

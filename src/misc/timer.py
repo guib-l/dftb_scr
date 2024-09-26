@@ -9,8 +9,7 @@ import matplotlib.pyplot as plt
 
 
 class Timer:
-    def __init__( self,
-                  label:str)->None:
+    def __init__( self, label:str)->None:
 
         self.label    = label
         self.timer_id = {}
