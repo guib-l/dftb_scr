@@ -55,3 +55,49 @@ def GammaPrime(rab,Ua,Ub):
 
 
     
+###############################################################################
+def calculate_Gamma(
+        adjacency:np.ndarray = None,
+        symbols:np.ndarray   = None,
+        angular_momentum  = None,
+        hubbard:dict      = None, 
+        shelltype:str     = "o",
+        number:np.ndarray    = None, ):
+
+    N  = number
+    adjacency += np.identity(N)
+
+    it         = 1
+    HubbardLst = []
+    AtomsLst   = []
+    if shelltype=="o":N=[1,3,5]
+    if shelltype=="l":N=[1,1,1]
+    if shelltype=="a":N=[1,0,0]
+
+    for l,iat in enumerate(angular_momentum):
+
+        if iat>=0:
+            HubbardLst.append( hubbard[symbols[l]][0] )
+            AtomsLst.append(l)
+        if iat>=1:
+            for j in range(N[1]):
+                HubbardLst.append( hubbard[symbols[l]][1] )
+                AtomsLst.append(l)
+        if iat>=2:
+            for j in range(N[1]):
+                HubbardLst.append( hubbard[symbols[l]][2] )
+                AtomsLst.append(l)
+
+    gamma = np.zeros((len(HubbardLst),len(HubbardLst),), dtype=np.float64) 
+    for k in range(len(HubbardLst)):
+        for l in range(len(HubbardLst)):
+            value = adjacency[AtomsLst[k],AtomsLst[l]]**-1 - \
+                        Gamma( adjacency[AtomsLst[k], AtomsLst[l]], 
+                                             HubbardLst[k], HubbardLst[l])
+            gamma[k,l] = value
+
+    return gamma
+
+
+
+
