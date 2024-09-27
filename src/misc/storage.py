@@ -37,34 +37,3 @@ class Storage:
             self.read()
         return self._model
         
-
-"""
-
-class Storage(pickelFormat):
-
-    pickel_save = None
-
-    def __init__(
-            self, 
-            directory="./",
-            fileName="data.out",
-            txt=sys.stdout):
-
-        if not directory[-1] == "/":
-            directory += "/"
-
-        try: 
-            os.makedirs(directory)
-        except OSError:
-            if not os.path.isdir(directory):
-                raise 
-
-        self.directory = directory
-        self.fileName = fileName
-        self.txt = txt
-
-        super().__init__( directory + fileName  )
-
-
-"""
-
